@@ -3,14 +3,20 @@ resolver = "2"
 members = [".", "dspy-macros", "dspy-huggingplace"]
 
 [package]
-name = "dspy"
+name = "dspy-rust"
 version = "0.1.0"
 edition = "2021"
-description = "A Rust port of DSPy — programming (not prompting) foundation models"
+description = "A Rust port of Stanford DSPy — programming (not prompting) foundation models"
 license = "MIT"
+authors = ["Saumya Garg"]
+repository = "https://github.com/Huggingplace/dspy-rs"
+homepage = "https://github.com/Huggingplace/dspy-rs"
+keywords = ["dspy", "llm", "ai", "prompt-optimization", "agents"]
+categories = ["science", "api-bindings"]
+readme = "README.md"
 
 [dependencies]
-dspy-macros = { path = "dspy-macros" }
+dspy-rust-macros = { path = "dspy-macros" }
 
 tokio = { version = "1", features = ["full"] }
 serde = { version = "1", features = ["derive"] }

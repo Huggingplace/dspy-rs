@@ -322,7 +322,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "dspy"
+name = "dspy-rust"
 version = "0.1.0"
 dependencies = [
  "anyhow",
@@ -330,7 +330,7 @@ dependencies = [
  "async-trait",
  "backon",
  "chrono",
- "dspy-macros",
+ "dspy-rust-macros",
  "futures",
  "indicatif",
  "moka",
@@ -351,12 +351,12 @@ dependencies = [
 ]
 
 [[package]]
-name = "dspy-huggingplace"
+name = "dspy-rust-huggingplace"
 version = "0.1.0"
 dependencies = [
  "anyhow",
  "async-trait",
- "dspy",
+ "dspy-rust",
  "reqwest",
  "serde",
  "serde_json",
@@ -366,7 +366,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "dspy-macros"
+name = "dspy-rust-macros"
 version = "0.1.0"
 dependencies = [
  "proc-macro2",

@@ -1,12 +1,17 @@
 [package]
-name = "dspy-huggingplace"
+name = "dspy-rust-huggingplace"
 version = "0.1.0"
 edition = "2021"
-description = "HuggingPlace integration adapter for dspy-rs"
+description = "HuggingPlace LM backend adapter for dspy-rust"
 license = "MIT"
+authors = ["Saumya Garg"]
+repository = "https://github.com/Huggingplace/dspy-rs"
+homepage = "https://github.com/Huggingplace/dspy-rs"
+keywords = ["dspy", "llm", "huggingplace"]
+categories = ["science", "api-bindings"]
 
 [dependencies]
-dspy = { path = ".." }
+dspy-rust = { path = ".." }
 tokio = { version = "1", features = ["full"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"

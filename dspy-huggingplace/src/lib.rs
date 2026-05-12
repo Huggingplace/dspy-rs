@@ -3,7 +3,7 @@ use std::time::Duration;
 use async_trait::async_trait;
 use serde_json::{json, Value};
 
-use dspy::clients::{LM, LMConfig, LMResponse, Message, Usage};
+use dspy_rust::clients::{LM, LMConfig, LMResponse, Message, Usage};
 
 /// LM implementation that routes through a HuggingPlace backend.
 ///

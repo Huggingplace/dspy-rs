@@ -9,7 +9,7 @@ pub mod retrievers;
 pub mod streaming;
 pub mod utils;
 
-pub use dspy_macros::Signature;
+pub use dspy_rust_macros::Signature;
 
 // Core types
 pub use signatures::{FieldDescriptor, FromExample, SignatureFields};

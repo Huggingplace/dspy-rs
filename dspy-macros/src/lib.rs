@@ -102,15 +102,15 @@ pub fn derive_signature(input: TokenStream) -> TokenStream {
         .collect();
 
     let expanded = quote! {
-        impl dspy::signatures::SignatureFields for #name {
+        impl dspy_rust::signatures::SignatureFields for #name {
             fn instruction() -> &'static str {
                 #doc_instruction
             }
 
-            fn input_fields() -> Vec<dspy::signatures::FieldDescriptor> {
+            fn input_fields() -> Vec<dspy_rust::signatures::FieldDescriptor> {
                 vec![
                     #(
-                        dspy::signatures::FieldDescriptor {
+                        dspy_rust::signatures::FieldDescriptor {
                             name: #input_field_names,
                             desc: #input_field_descs,
                             prefix: #input_field_prefixes,
@@ -120,10 +120,10 @@ pub fn derive_signature(input: TokenStream) -> TokenStream {
                 ]
             }
 
-            fn output_fields() -> Vec<dspy::signatures::FieldDescriptor> {
+            fn output_fields() -> Vec<dspy_rust::signatures::FieldDescriptor> {
                 vec![
                     #(
-                        dspy::signatures::FieldDescriptor {
+                        dspy_rust::signatures::FieldDescriptor {
                             name: #output_field_names,
                             desc: #output_field_descs,
                             prefix: #output_field_prefixes,
@@ -138,8 +138,8 @@ pub fn derive_signature(input: TokenStream) -> TokenStream {
             }
         }
 
-        impl dspy::signatures::FromExample for #name {
-            fn from_example(example: &dspy::primitives::Example) -> Option<Self> {
+        impl dspy_rust::signatures::FromExample for #name {
+            fn from_example(example: &dspy_rust::primitives::Example) -> Option<Self> {
                 Some(Self {
                     #(
                         #all_field_idents: example.get(#all_field_names)
@@ -148,8 +148,8 @@ pub fn derive_signature(input: TokenStream) -> TokenStream {
                 })
             }
 
-            fn to_example(&self) -> dspy::primitives::Example {
-                let mut ex = dspy::primitives::Example::new();
+            fn to_example(&self) -> dspy_rust::primitives::Example {
+                let mut ex = dspy_rust::primitives::Example::new();
                 #(
                     ex.set(
                         #all_field_names,
